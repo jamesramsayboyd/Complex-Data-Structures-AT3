@@ -154,7 +154,17 @@ namespace Complex_Data_Structures_AT3
             ListViewItem lvi = listViewFilter.Items[index];
             textBoxFilterId.Text = lvi.SubItems[0].Text.ToString();
             textBoxFilterName.Text = lvi.SubItems[1].Text.ToString();
+        }
 
+        private void MasterFileProject_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.K && e.Modifiers == Keys.Alt)
+            {
+                //textBoxFilterId.Text = "Working";
+                AdminForm adminForm = new AdminForm();
+                adminForm.ShowDialog();
+
+            }
         }
     }
 }

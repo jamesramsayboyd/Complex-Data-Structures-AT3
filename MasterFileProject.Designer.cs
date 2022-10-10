@@ -134,8 +134,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxFilterName);
             this.Controls.Add(this.textBoxFilterId);
+            this.KeyPreview = true;
             this.Name = "MasterFileProject";
             this.Text = "Master File Project";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterFileProject_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
