@@ -24,7 +24,7 @@ namespace Complex_Data_Structures_AT3
         /// Q4.1 Create a Dictionary data structure with a TKey of type integer
         /// and a TValue of type string, name the new structure "MasterFile"
         /// </summary>
-        Dictionary<int, string> MasterFile = new Dictionary<int, string>();
+        static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
         string FileName = "MyNames_v2.csv";
 
         /// <summary>
@@ -54,8 +54,15 @@ namespace Complex_Data_Structures_AT3
         {
             foreach (var staff in MasterFile)
             {
-                listBoxDisplay.Items.Add(staff.Key);
+                DisplaySingleStaffMember(listViewDisplay, staff);
             }
+        }
+
+        private void DisplaySingleStaffMember(ListView listView, KeyValuePair<int, string> staffMember)
+        {
+            ListViewItem lvi = new ListViewItem(staffMember.Key.ToString());
+            lvi.SubItems.Add(staffMember.Value);
+            listView.Items.Add(lvi);
         }
 
         /// <summary>
@@ -64,18 +71,23 @@ namespace Complex_Data_Structures_AT3
         /// as each character is entered. The listbox must reflect the filtered data in
         /// real time
         /// </summary>
-        private void textBoxFilterName_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxFilterName_KeyUp(object sender, KeyEventArgs e)
         {
             DisplayFilteredNames(textBoxFilterName.Text);
         }
+
+        /// <summary>
+        /// Filters staff name data into Textbox using String.Contains()
+        /// </summary>
+        /// <param name="FilterName"></param>
         private void DisplayFilteredNames(string FilterName)
         {
-            listBoxFilter.Items.Clear();
+            listViewFilter.Items.Clear();
             foreach (var staff in MasterFile)
             {
                 if (staff.Value.ToUpper().Contains(FilterName.ToUpper()))
                 {
-                    listBoxFilter.Items.Add(staff.Value);
+                    DisplaySingleStaffMember(listViewFilter, staff);
                 }
             }
         }
@@ -86,19 +98,24 @@ namespace Complex_Data_Structures_AT3
         /// as each number is entered. The listbox must reflect the filtered data in
         /// real time
         /// </summary>
-        private void textBoxFilterId_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxFilterId_KeyUp(object sender, KeyEventArgs e)
         {
             DisplayFilteredIDs(textBoxFilterId.Text);
         }
+
+        /// <summary>
+        /// Filters staff ID data into Textbox using String.Contains()
+        /// </summary>
+        /// <param name="FilterId"></param>
         private void DisplayFilteredIDs(string FilterId)
         {
-            listBoxFilter.Items.Clear();
+            listViewFilter.Items.Clear();
             foreach (var staff in MasterFile)
             {
                 string Id = staff.Key.ToString();
                 if (Id.Contains(FilterId))
                 {
-                    listBoxFilter.Items.Add(staff.Key);
+                    DisplaySingleStaffMember(listViewFilter, staff);
                 }
             }
         }
@@ -123,6 +140,19 @@ namespace Complex_Data_Structures_AT3
         private void textBoxFilterId_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             textBoxFilterId.Clear();
+        }
+
+        /// <summary>
+        /// Q4.8 Create a mouse click method for the filtered listbox which will populate
+        /// the two textboxes when a staff record is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listBoxFilter_MouseClick(object sender, MouseEventArgs e)
+        {
+            //int index = listBoxFilter.SelectedIndex;
+            //textBoxFilterID.Text = listBoxFilter.SelectedItem.Key.ToString();
+            //textBoxFilterId.Text = listBoxFilter.
         }
     }
 }
