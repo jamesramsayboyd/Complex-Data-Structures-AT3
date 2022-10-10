@@ -24,6 +24,7 @@ namespace Complex_Data_Structures_AT3
         {
             InitializeComponent();
             LoadStaffDetails();
+            UpdateDictionary(id, name);
             DisplayFullData();
         }
 
@@ -70,6 +71,22 @@ namespace Complex_Data_Structures_AT3
             ListViewItem lvi = new ListViewItem(staffMember.Key.ToString());
             lvi.SubItems.Add(staffMember.Value);
             listView.Items.Add(lvi);
+        }
+
+        /// <summary>
+        /// Updates the Dictionary to add/edit/
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        private void UpdateDictionary(string id, string name)
+        {
+            int key = int.Parse(id);
+            try
+            {
+                MasterFile.Remove(key);
+            }
+            catch (ArgumentNullException e) { }
+            MasterFile.Add(key, name);
         }
 
         /// <summary>

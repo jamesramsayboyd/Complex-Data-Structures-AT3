@@ -93,7 +93,7 @@
             // 
             this.buttonDelete.Location = new System.Drawing.Point(231, 141);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(100, 23);
             this.buttonDelete.TabIndex = 6;
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -112,6 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 247);
+            this.ControlBox = false;
             this.Controls.Add(this.buttonRollBack);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonUpdate);
@@ -120,8 +121,10 @@
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "AdminForm";
             this.Text = "AdminForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
