@@ -111,6 +111,7 @@
             this.listViewFilter.TabIndex = 7;
             this.listViewFilter.UseCompatibleStateImageBehavior = false;
             this.listViewFilter.View = System.Windows.Forms.View.Details;
+            this.listViewFilter.Click += new System.EventHandler(this.listViewFilter_Click);
             // 
             // filterId
             // 

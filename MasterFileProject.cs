@@ -148,11 +148,13 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listBoxFilter_MouseClick(object sender, MouseEventArgs e)
+        private void listViewFilter_Click(object sender, EventArgs e)
         {
-            //int index = listBoxFilter.SelectedIndex;
-            //textBoxFilterID.Text = listBoxFilter.SelectedItem.Key.ToString();
-            //textBoxFilterId.Text = listBoxFilter.
+            int index = listViewFilter.SelectedIndices[0];
+            ListViewItem lvi = listViewFilter.Items[index];
+            textBoxFilterId.Text = lvi.SubItems[0].Text.ToString();
+            textBoxFilterName.Text = lvi.SubItems[1].Text.ToString();
+
         }
     }
 }
