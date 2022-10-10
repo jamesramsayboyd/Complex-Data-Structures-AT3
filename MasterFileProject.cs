@@ -20,12 +20,19 @@ namespace Complex_Data_Structures_AT3
             DisplayFullData();
         }
 
+        public MasterFileProject(string id, string name)
+        {
+            InitializeComponent();
+            LoadStaffDetails();
+            DisplayFullData();
+        }
+
         /// <summary>
         /// Q4.1 Create a Dictionary data structure with a TKey of type integer
         /// and a TValue of type string, name the new structure "MasterFile"
         /// </summary>
         static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
-        string FileName = "MyNames_v2.csv";
+        string FileName = "MalinStaffNamesV2.csv";
 
         /// <summary>
         /// Q4.2 Create a method that will read the data from the .csv file into
@@ -160,11 +167,16 @@ namespace Complex_Data_Structures_AT3
         {
             if (e.KeyCode == Keys.K && e.Modifiers == Keys.Alt)
             {
-                //textBoxFilterId.Text = "Working";
-                AdminForm adminForm = new AdminForm();
+                string id = textBoxFilterId.Text.ToString();
+                string name = textBoxFilterName.Text.ToString();
+                AdminForm adminForm = new AdminForm(id, name);
                 adminForm.ShowDialog();
-
             }
+        }
+
+        private void SendStaffDataToAdmin(string id, string name)
+        {
+
         }
     }
 }

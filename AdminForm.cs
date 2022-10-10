@@ -15,6 +15,16 @@ namespace Complex_Data_Structures_AT3
         public AdminForm()
         {
             InitializeComponent();
+
         }
+
+        public AdminForm(string id, string name)
+        {
+            InitializeComponent();
+            textBoxId.Text = id;
+            textBoxName.Text = name;
+        }
+
+        List<string> list = new List<string>();
     }
 }
