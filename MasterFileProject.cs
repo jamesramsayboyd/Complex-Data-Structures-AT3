@@ -180,6 +180,13 @@ namespace Complex_Data_Structures_AT3
             textBoxFilterName.Text = lvi.SubItems[1].Text.ToString();
         }
 
+        /// <summary>
+        /// Q4.9 Create a method that will open the admin form when the Alt + K keys are
+        /// pressed. Ensure the general form sends the currently selected staff ID value to
+        /// the admin form which is opened as modal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MasterFileProject_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.K && e.Modifiers == Keys.Alt)

@@ -79,6 +79,7 @@
             this.buttonCreate.TabIndex = 4;
             this.buttonCreate.Text = "CREATE";
             this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonUpdate
             // 
@@ -88,6 +89,7 @@
             this.buttonUpdate.TabIndex = 5;
             this.buttonUpdate.Text = "UPDATE NAME";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -97,6 +99,7 @@
             this.buttonDelete.TabIndex = 6;
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonRollBack
             // 

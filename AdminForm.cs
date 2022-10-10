@@ -35,6 +35,12 @@ namespace Complex_Data_Structures_AT3
         /// from the related textbox. The new staff member must be added to the Dictionary
         /// data structure
         /// </summary>
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+            CreateNewStaffMember();
+        }
+
+        // Adds the new staff member to the dictionary
         private void CreateNewStaffMember()
         {
             Random rnd = new Random();
@@ -47,6 +53,12 @@ namespace Complex_Data_Structures_AT3
         /// <summary>
         /// Q5.4 Create a method that will update the name of the current staff ID
         /// </summary>
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateStaffMember();
+        }
+
+        // Updates staff member by id
         private void UpdateStaffMember()
         {
             int id = int.Parse(textBoxId.Text);
@@ -58,6 +70,12 @@ namespace Complex_Data_Structures_AT3
         /// <summary>
         /// Q5.5 Create a method that will remove the current staff id and clear the textboxes
         /// </summary>
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            RemoveStaffMember();
+        }
+
+        // Deletes a staff member
         private void RemoveStaffMember()
         {
             int id = int.Parse(textBoxId.Text);
