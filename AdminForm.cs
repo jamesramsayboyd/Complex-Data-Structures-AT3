@@ -12,6 +12,11 @@ namespace Complex_Data_Structures_AT3
 {
     public partial class AdminForm : Form
     {
+        /// <summary>
+        /// Q5.1 Create a form with the following settings: Control Box = false and 
+        /// KeyPreview = True, then add three buttons and two textboxes. The textbox 
+        /// for the Staff ID should be read-only.
+        /// </summary>
         public AdminForm()
         {
             InitializeComponent();
@@ -26,12 +31,12 @@ namespace Complex_Data_Structures_AT3
         public AdminForm(int id)
         {
             InitializeComponent();
-            string name;
-            MasterFileProject.MasterFile.TryGetValue(id, out name);
+            MasterFileProject.MasterFile.TryGetValue(id, out string name);
             textBoxId.Text = id.ToString();
             textBoxName.Text = name;
         }
 
+        #region CREATE
         /// <summary>
         /// Q5.3 Create a method that will create a new staff ID and input the staff name
         /// from the related textbox. The new staff member must be added to the Dictionary
@@ -50,10 +55,12 @@ namespace Complex_Data_Structures_AT3
             Random rnd = new Random();
             string random = "77" + rnd.Next(0000000, 9999999).ToString();
             int id = int.Parse(random);
-            string name = textBoxName.ToString();
+            string name = textBoxName.Text.ToString();
             MasterFileProject.MasterFile.Add(id, name);
         }
+        #endregion CREATE
 
+        #region UPDATE
         /// <summary>
         /// Q5.4 Create a method that will update the name of the current staff ID
         /// </summary>
@@ -70,7 +77,9 @@ namespace Complex_Data_Structures_AT3
             MasterFileProject.MasterFile.Remove(id);
             MasterFileProject.MasterFile.Add(id, name);
         }
+        #endregion UPDATE
 
+        #region DELETE
         /// <summary>
         /// Q5.5 Create a method that will remove the current staff id and clear the textboxes
         /// </summary>
@@ -87,6 +96,7 @@ namespace Complex_Data_Structures_AT3
             textBoxId.Clear();
             textBoxName.Clear();
         }
+        #endregion DELETE
 
         /// <summary>
         /// Q5.6 Create a method that will save changes to the csv file, this method should be 

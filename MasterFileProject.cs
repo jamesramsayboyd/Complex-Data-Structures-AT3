@@ -101,7 +101,20 @@ namespace Complex_Data_Structures_AT3
         /// <param name="e"></param>
         private void textBoxFilterName_KeyUp(object sender, KeyEventArgs e)
         {
-            DisplayFilteredNames(textBoxFilterName);
+            if (e.KeyCode == Keys.Alt) 
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                DisplayFilteredNames(textBoxFilterName);
+
+            }
+            //if (e.Modifiers != Keys.Alt)
+            //{
+            //    DisplayFilteredNames(textBoxFilterName);
+            //}
+            //DisplayFilteredNames(textBoxFilterName);
         }
 
         /// <summary>
