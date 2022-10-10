@@ -20,14 +20,6 @@ namespace Complex_Data_Structures_AT3
             DisplayFullData();
         }
 
-        public MasterFileProject(string id, string name)
-        {
-            InitializeComponent();
-            LoadStaffDetails();
-            UpdateDictionary(id, name);
-            DisplayFullData();
-        }
-
         /// <summary>
         /// Q4.1 Create a Dictionary data structure with a TKey of type integer
         /// and a TValue of type string, name the new structure "MasterFile"
@@ -35,6 +27,7 @@ namespace Complex_Data_Structures_AT3
         static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
         string FileName = "MalinStaffNamesV2.csv";
 
+        #region LOAD AND DISPLAY
         /// <summary>
         /// Q4.2 Create a method that will read the data from the .csv file into
         /// the Dictionary data structure when the form loads
@@ -66,28 +59,20 @@ namespace Complex_Data_Structures_AT3
             }
         }
 
+        /// <summary>
+        /// Displays a single staff member's ID and name in the specified ListView
+        /// </summary>
+        /// <param name="listView">The ListView in which to display the data</param>
+        /// <param name="staffMember">A KeyValuePair from the Dictionary</param>
         private void DisplaySingleStaffMember(ListView listView, KeyValuePair<int, string> staffMember)
         {
             ListViewItem lvi = new ListViewItem(staffMember.Key.ToString());
             lvi.SubItems.Add(staffMember.Value);
             listView.Items.Add(lvi);
         }
+        #endregion LOAD AND DISPLAY
 
-        /// <summary>
-        /// Updates the Dictionary to add/edit/
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        private void UpdateDictionary(string id, string name)
-        {
-            int key = int.Parse(id);
-            try
-            {
-                MasterFile.Remove(key);
-            }
-            catch (ArgumentNullException e) { }
-            MasterFile.Add(key, name);
-        }
+        #region FILTERING
 
         /// <summary>
         /// Q4.4 Create a method to filter the staff name data from the Dictionary into
@@ -95,25 +80,28 @@ namespace Complex_Data_Structures_AT3
         /// as each character is entered. The listbox must reflect the filtered data in
         /// real time
         /// </summary>
-        private void textBoxFilterName_KeyUp(object sender, KeyEventArgs e)
-        {
-            DisplayFilteredNames(textBoxFilterName.Text);
-        }
-
-        /// <summary>
-        /// Filters staff name data into Textbox using String.Contains()
-        /// </summary>
-        /// <param name="FilterName"></param>
-        private void DisplayFilteredNames(string FilterName)
+        /// <param name="textBox">The staff name being searched</param>
+        private void DisplayFilteredNames(TextBox textBox)
         {
             listViewFilter.Items.Clear();
+            string target = textBox.Text.ToUpper();
             foreach (var staff in MasterFile)
             {
-                if (staff.Value.ToUpper().Contains(FilterName.ToUpper()))
+                if (staff.Value.ToUpper().Contains(target))
                 {
                     DisplaySingleStaffMember(listViewFilter, staff);
                 }
             }
+        }
+
+        /// <summary>
+        /// Calls above method to filter staff name data as text is typed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBoxFilterName_KeyUp(object sender, KeyEventArgs e)
+        {
+            DisplayFilteredNames(textBoxFilterName);
         }
 
         /// <summary>
@@ -122,22 +110,15 @@ namespace Complex_Data_Structures_AT3
         /// as each number is entered. The listbox must reflect the filtered data in
         /// real time
         /// </summary>
-        private void textBoxFilterId_KeyUp(object sender, KeyEventArgs e)
-        {
-            DisplayFilteredIDs(textBoxFilterId.Text);
-        }
-
-        /// <summary>
-        /// Filters staff ID data into Textbox using String.Contains()
-        /// </summary>
-        /// <param name="FilterId"></param>
-        private void DisplayFilteredIDs(string FilterId)
+        /// <param name="textBox">The TextBox containing the search target</param>
+        private void DisplayFilteredIDs(TextBox textBox)
         {
             listViewFilter.Items.Clear();
+            string target = textBox.Text.ToString();
             foreach (var staff in MasterFile)
             {
                 string Id = staff.Key.ToString();
-                if (Id.Contains(FilterId))
+                if (Id.Contains(target))
                 {
                     DisplaySingleStaffMember(listViewFilter, staff);
                 }
@@ -145,27 +126,17 @@ namespace Complex_Data_Structures_AT3
         }
 
         /// <summary>
-        /// Q4.6 Create a double click method for the staff name text box which will
-        /// clear the contents and place the focus into the staff name text box
+        /// Calls above method to filter staff ID data as numbers are typed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBoxFilterName_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void textBoxFilterId_KeyUp(object sender, KeyEventArgs e)
         {
-            textBoxFilterName.Clear();
+            DisplayFilteredIDs(textBoxFilterId);
         }
+        #endregion FILTERING
 
-        /// <summary>
-        /// Q4.7 Create a double click method for the staff ID text box which will
-        /// clear the contents and place the focus into the staff ID text box
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void textBoxFilterId_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            textBoxFilterId.Clear();
-        }
-
+        #region TEXTBOX MANAGEMENT
         /// <summary>
         /// Q4.8 Create a mouse click method for the filtered listbox which will populate
         /// the two textboxes when a staff record is selected
@@ -181,7 +152,25 @@ namespace Complex_Data_Structures_AT3
         }
 
         /// <summary>
-        /// Q4.9 Create a method that will open the admin form when the Alt + K keys are
+        /// A method that clears a given TextBox's Text property and gives it focus
+        /// </summary>
+        /// <param name="textBox"></param>
+        private void ClearTextBox(TextBox textBox)
+        {
+            textBox.Clear();
+            textBox.Focus();
+        }
+        #endregion TEXTBOX MANAGEMENT
+
+        #region OPENING ADMIN FORM
+        /// <summary>
+        /// Q4.6 Create a method for the staff name text box which will clear the 
+        /// contents and place the focus into the staff name text box. Utilise a
+        /// keyboard shortcut
+        /// Q4.7 Create a method for the staff ID text box which will clear the 
+        /// contents and place the focus into the staff ID text box. Utilise a keyboard
+        /// shortcut
+        /// Q4.9 Create a method that will open the admin form when the Alt + A keys are
         /// pressed. Ensure the general form sends the currently selected staff ID value to
         /// the admin form which is opened as modal
         /// </summary>
@@ -189,18 +178,26 @@ namespace Complex_Data_Structures_AT3
         /// <param name="e"></param>
         private void MasterFileProject_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.K && e.Modifiers == Keys.Alt)
+            if (e.Modifiers == Keys.Alt)
             {
-                string id = textBoxFilterId.Text.ToString();
-                string name = textBoxFilterName.Text.ToString();
-                AdminForm adminForm = new AdminForm(id, name);
-                adminForm.ShowDialog();
+                switch (e.KeyCode)
+                {
+                    case Keys.A:
+                        int.TryParse(textBoxFilterId.Text, out int id);
+                        AdminForm adminForm = new AdminForm(id);
+                        adminForm.ShowDialog();
+                        break;
+                    case Keys.I:
+                        ClearTextBox(textBoxFilterId);
+                        break;
+                    case Keys.N:
+                        ClearTextBox(textBoxFilterName);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
-
-        private void SendStaffDataToAdmin(string id, string name)
-        {
-
-        }
+        #endregion OPENING ADMIN FORM
     }
 }

@@ -47,7 +47,6 @@
             this.textBoxFilterId.Size = new System.Drawing.Size(100, 20);
             this.textBoxFilterId.TabIndex = 2;
             this.textBoxFilterId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFilterId_KeyUp);
-            this.textBoxFilterId.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBoxFilterId_MouseDoubleClick);
             // 
             // textBoxFilterName
             // 
@@ -56,7 +55,6 @@
             this.textBoxFilterName.Size = new System.Drawing.Size(100, 20);
             this.textBoxFilterName.TabIndex = 3;
             this.textBoxFilterName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFilterName_KeyUp);
-            this.textBoxFilterName.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBoxFilterName_MouseDoubleClick);
             // 
             // label1
             // 

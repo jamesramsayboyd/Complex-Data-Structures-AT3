@@ -19,14 +19,16 @@ namespace Complex_Data_Structures_AT3
 
         /// <summary>
         /// Q5.2 Create a method that will receive the staff ID from the general form
-        /// an then populate texboxes with the related data
+        /// and then populate texboxes with the related data
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
-        public AdminForm(string id, string name)
+        public AdminForm(int id)
         {
             InitializeComponent();
-            textBoxId.Text = id;
+            string name;
+            MasterFileProject.MasterFile.TryGetValue(id, out name);
+            textBoxId.Text = id.ToString();
             textBoxName.Text = name;
         }
 
@@ -40,7 +42,9 @@ namespace Complex_Data_Structures_AT3
             CreateNewStaffMember();
         }
 
-        // Adds the new staff member to the dictionary
+        /// <summary>
+        /// Generates a new ID Number and adds the new staff member to the Dictionary
+        /// </summary>
         private void CreateNewStaffMember()
         {
             Random rnd = new Random();
