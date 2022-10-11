@@ -48,15 +48,34 @@ namespace Complex_Data_Structures_AT3
         }
 
         /// <summary>
-        /// Generates a new ID Number and adds the new staff member to the Dictionary
+        /// Adds the new staff member to the Dictionary
         /// </summary>
         private void CreateNewStaffMember()
         {
-            Random rnd = new Random();
-            string random = "77" + rnd.Next(0000000, 9999999).ToString();
-            int id = int.Parse(random);
+            int id = GenerateUniqueIdNumber();
             string name = textBoxName.Text.ToString();
             MasterFileProject.MasterFile.Add(id, name);
+        }
+
+        /// <summary>
+        /// Generates a new unique ID number for creating a new staff member
+        /// </summary>
+        /// <returns>A unique 9-digit ID number beginning with '77'</returns>
+        private int GenerateUniqueIdNumber()
+        {
+            bool uniqueId = false;
+            int id = 0;
+            while (!uniqueId)
+            {
+                Random rnd = new Random();
+                string random = "77" + rnd.Next(0000000, 9999999).ToString();
+                id = int.Parse(random);
+                if (!MasterFileProject.MasterFile.ContainsKey(id))
+                {
+                    uniqueId = true;
+                }
+            }
+            return id;
         }
         #endregion CREATE
 
