@@ -111,9 +111,14 @@ namespace Complex_Data_Structures_AT3
         private void RemoveStaffMember()
         {
             int id = int.Parse(textBoxId.Text);
-            MasterFileProject.MasterFile.Remove(id);
-            textBoxId.Clear();
-            textBoxName.Clear();
+            DialogResult delChoice = MessageBox.Show("Do you wish to delete this staff member?",
+                    "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (delChoice == DialogResult.Yes)
+            {
+                MasterFileProject.MasterFile.Remove(id);
+                textBoxId.Clear();
+                textBoxName.Clear();
+            }
         }
         #endregion DELETE
 

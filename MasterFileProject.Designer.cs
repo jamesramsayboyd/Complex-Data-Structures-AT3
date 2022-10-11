@@ -46,6 +46,7 @@
             this.textBoxFilterId.Name = "textBoxFilterId";
             this.textBoxFilterId.Size = new System.Drawing.Size(100, 20);
             this.textBoxFilterId.TabIndex = 2;
+            this.textBoxFilterId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFilterId_KeyPress);
             this.textBoxFilterId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFilterId_KeyUp);
             // 
             // textBoxFilterName
@@ -84,6 +85,7 @@
             this.listViewDisplay.Name = "listViewDisplay";
             this.listViewDisplay.Size = new System.Drawing.Size(218, 388);
             this.listViewDisplay.TabIndex = 6;
+            this.listViewDisplay.TabStop = false;
             this.listViewDisplay.UseCompatibleStateImageBehavior = false;
             this.listViewDisplay.View = System.Windows.Forms.View.Details;
             // 
@@ -106,7 +108,7 @@
             this.listViewFilter.Location = new System.Drawing.Point(272, 113);
             this.listViewFilter.Name = "listViewFilter";
             this.listViewFilter.Size = new System.Drawing.Size(218, 303);
-            this.listViewFilter.TabIndex = 7;
+            this.listViewFilter.TabIndex = 4;
             this.listViewFilter.UseCompatibleStateImageBehavior = false;
             this.listViewFilter.View = System.Windows.Forms.View.Details;
             this.listViewFilter.Click += new System.EventHandler(this.listViewFilter_Click);

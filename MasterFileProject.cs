@@ -101,19 +101,22 @@ namespace Complex_Data_Structures_AT3
         /// <param name="e"></param>
         private void textBoxFilterName_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Alt) 
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                DisplayFilteredNames(textBoxFilterName);
-
-            }
-            //if (e.Modifiers != Keys.Alt)
+            //if (!char.IsLetterOrDigit(e.KeyChar)) 
+            //{
+            //    e.Handled = true;
+            //}
+            //else
             //{
             //    DisplayFilteredNames(textBoxFilterName);
             //}
+            ////if (e.Modifiers != Keys.Alt)
+            ////{
+            ////    DisplayFilteredNames(textBoxFilterName);
+            ////}
+            if (e.Alt || e.KeyCode == Keys.Tab)
+            {
+                DisplayFilteredNames(textBoxFilterName);
+            }
             //DisplayFilteredNames(textBoxFilterName);
         }
 
@@ -138,6 +141,15 @@ namespace Complex_Data_Structures_AT3
             }
         }
 
+        private void textBoxFilterId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (!char.IsNumber(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //    return;
+            //}
+            //DisplayFilteredIDs(textBoxFilterId);
+        }
         /// <summary>
         /// Calls above method to filter staff ID data as numbers are typed
         /// </summary>
@@ -145,6 +157,10 @@ namespace Complex_Data_Structures_AT3
         /// <param name="e"></param>
         private void textBoxFilterId_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.Alt)
+            {
+                return;
+            }
             DisplayFilteredIDs(textBoxFilterId);
         }
         #endregion FILTERING
@@ -196,7 +212,7 @@ namespace Complex_Data_Structures_AT3
                 switch (e.KeyCode)
                 {
                     case Keys.A:
-                        int.TryParse(textBoxFilterId.Text, out int id);
+                        int.TryParse(listViewFilter.SelectedItems[0].Text, out int id);
                         AdminForm adminForm = new AdminForm(id);
                         adminForm.ShowDialog();
                         break;
@@ -212,5 +228,6 @@ namespace Complex_Data_Structures_AT3
             }
         }
         #endregion OPENING ADMIN FORM
+
     }
 }
