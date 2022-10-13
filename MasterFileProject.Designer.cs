@@ -38,6 +38,7 @@
             this.listViewFilter = new System.Windows.Forms.ListView();
             this.filterId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filterName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.richTextBoxControls = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // textBoxFilterId
@@ -105,9 +106,9 @@
             this.filterId,
             this.filterName});
             this.listViewFilter.HideSelection = false;
-            this.listViewFilter.Location = new System.Drawing.Point(272, 113);
+            this.listViewFilter.Location = new System.Drawing.Point(272, 120);
             this.listViewFilter.Name = "listViewFilter";
-            this.listViewFilter.Size = new System.Drawing.Size(218, 303);
+            this.listViewFilter.Size = new System.Drawing.Size(218, 296);
             this.listViewFilter.TabIndex = 4;
             this.listViewFilter.UseCompatibleStateImageBehavior = false;
             this.listViewFilter.View = System.Windows.Forms.View.Details;
@@ -123,11 +124,21 @@
             this.filterName.Text = "Name";
             this.filterName.Width = 130;
             // 
+            // richTextBoxControls
+            // 
+            this.richTextBoxControls.Enabled = false;
+            this.richTextBoxControls.Location = new System.Drawing.Point(378, 19);
+            this.richTextBoxControls.Name = "richTextBoxControls";
+            this.richTextBoxControls.Size = new System.Drawing.Size(112, 86);
+            this.richTextBoxControls.TabIndex = 7;
+            this.richTextBoxControls.Text = "";
+            // 
             // MasterFileProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 450);
+            this.ClientSize = new System.Drawing.Size(515, 450);
+            this.Controls.Add(this.richTextBoxControls);
             this.Controls.Add(this.listViewFilter);
             this.Controls.Add(this.listViewDisplay);
             this.Controls.Add(this.label2);
@@ -154,6 +165,7 @@
         private System.Windows.Forms.ListView listViewFilter;
         private System.Windows.Forms.ColumnHeader filterId;
         private System.Windows.Forms.ColumnHeader filterName;
+        private System.Windows.Forms.RichTextBox richTextBoxControls;
     }
 }
 

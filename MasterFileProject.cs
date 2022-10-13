@@ -18,6 +18,7 @@ namespace Complex_Data_Structures_AT3
             InitializeComponent();
             LoadStaffDetails();
             DisplayFullData();
+            TextBoxControls();
         }
 
         /// <summary>
@@ -212,9 +213,16 @@ namespace Complex_Data_Structures_AT3
                 switch (e.KeyCode)
                 {
                     case Keys.A:
-                        int.TryParse(listViewFilter.SelectedItems[0].Text, out int id);
-                        AdminForm adminForm = new AdminForm(id);
-                        adminForm.ShowDialog();
+                        if (listViewFilter.SelectedItems.Count > 0)
+                        {
+                            int.TryParse(listViewFilter.SelectedItems[0].Text, out int id);
+                            AdminForm adminForm = new AdminForm(id);
+                            adminForm.ShowDialog();
+                        }
+                        else
+                        {
+                            //error message 'select staff before opening admin'
+                        }
                         break;
                     case Keys.I:
                         ClearTextBox(textBoxFilterId);
@@ -229,5 +237,15 @@ namespace Complex_Data_Structures_AT3
         }
         #endregion OPENING ADMIN FORM
 
+        #region UTILITIES
+        private void TextBoxControls()
+        {
+            richTextBoxControls.Text = 
+                "Controls:\n" +
+                "Alt+A: Admin\n" +
+                "Alt+I: Clear ID\n" +
+                "Alt+N: Clear Name";
+        }
+        #endregion UTILITIES
     }
 }
