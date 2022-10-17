@@ -1,7 +1,5 @@
 *** Debug Output for MSSS Master File Project ***
 
-New data set loaded to Dictionary: 2 milliseconds
-New data set loaded to Dictionary: 25757 ticks
-
-Data set saved to CSV: 1 milliseconds
-Data set saved to CSV: 15418 ticks
+New data set loaded to Dictionary: 3 milliseconds
+New data set loaded to Dictionary: 37815 ticks
+Searching for : 445 milliseconds

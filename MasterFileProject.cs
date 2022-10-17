@@ -97,6 +97,7 @@ namespace Complex_Data_Structures_AT3
         {
             listViewFilter.Items.Clear();
             string target = textBox.Text.ToUpper();
+            var stopwatch = Stopwatch.StartNew();
             foreach (var staff in MasterFile)
             {
                 if (staff.Value.ToUpper().Contains(target))
@@ -104,6 +105,9 @@ namespace Complex_Data_Structures_AT3
                     DisplaySingleStaffMember(listViewFilter, staff);
                 }
             }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+            Trace.WriteLine("Searching for " + target + ": " + ts.Milliseconds.ToString() + " milliseconds");
         }
 
         private void textBoxFilterName_KeyPress(object sender, KeyPressEventArgs e)
