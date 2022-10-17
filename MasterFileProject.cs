@@ -95,30 +95,29 @@ namespace Complex_Data_Structures_AT3
             }
         }
 
+        private void textBoxFilterName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                DisplayFilteredNames(textBoxFilterName);
+            }
+            else
+                e.Handled = true;
+        }
+
         /// <summary>
         /// Calls above method to filter staff name data as text is typed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBoxFilterName_KeyUp(object sender, KeyEventArgs e)
+        private void textBoxFilterId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!char.IsLetterOrDigit(e.KeyChar)) 
-            //{
-            //    e.Handled = true;
-            //}
-            //else
-            //{
-            //    DisplayFilteredNames(textBoxFilterName);
-            //}
-            ////if (e.Modifiers != Keys.Alt)
-            ////{
-            ////    DisplayFilteredNames(textBoxFilterName);
-            ////}
-            if (e.Alt || e.KeyCode == Keys.Tab)
+            if (!char.IsNumber(e.KeyChar))
             {
-                DisplayFilteredNames(textBoxFilterName);
+                e.Handled = true;
+                return;
             }
-            //DisplayFilteredNames(textBoxFilterName);
+            DisplayFilteredIDs(textBoxFilterId);
         }
 
         /// <summary>
@@ -140,29 +139,6 @@ namespace Complex_Data_Structures_AT3
                     DisplaySingleStaffMember(listViewFilter, staff);
                 }
             }
-        }
-
-        private void textBoxFilterId_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (!char.IsNumber(e.KeyChar))
-            //{
-            //    e.Handled = true;
-            //    return;
-            //}
-            //DisplayFilteredIDs(textBoxFilterId);
-        }
-        /// <summary>
-        /// Calls above method to filter staff ID data as numbers are typed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void textBoxFilterId_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Alt)
-            {
-                return;
-            }
-            DisplayFilteredIDs(textBoxFilterId);
         }
         #endregion FILTERING
 
@@ -221,18 +197,24 @@ namespace Complex_Data_Structures_AT3
                         }
                         else
                         {
-                            //error message 'select staff before opening admin'
+                            UserMessage(1);
                         }
                         break;
                     case Keys.I:
                         ClearTextBox(textBoxFilterId);
+                        UserMessage(2);
                         break;
                     case Keys.N:
                         ClearTextBox(textBoxFilterName);
+                        UserMessage(3);
                         break;
                     default:
                         break;
                 }
+            }
+            else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.C)
+            {
+                Close();
             }
         }
         #endregion OPENING ADMIN FORM
@@ -240,12 +222,33 @@ namespace Complex_Data_Structures_AT3
         #region UTILITIES
         private void TextBoxControls()
         {
-            richTextBoxControls.Text = 
+            richTextBoxControls.Text =
                 "Controls:\n" +
                 "Alt+A: Admin\n" +
                 "Alt+I: Clear ID\n" +
-                "Alt+N: Clear Name";
+                "Alt+N: Clear Name\n" +
+                "Ctrl+C: Close";
         }
         #endregion UTILITIES
+
+        #region USER MESSAGING
+        private void UserMessage(int message)
+        {
+            switch (message)
+            {
+                case 1:
+                    toolStripStatusLabel.Text = "Select a staff member to open the Admin Form";
+                    break;
+                case 2:
+                    toolStripStatusLabel.Text = "ID TextBox cleared";
+                    break;
+                case 3:
+                    toolStripStatusLabel.Text = "Name TextBox cleared";
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion USER MESSAGING
     }
 }

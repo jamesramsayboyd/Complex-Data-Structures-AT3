@@ -39,6 +39,9 @@
             this.filterId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filterName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.richTextBoxControls = new System.Windows.Forms.RichTextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxFilterId
@@ -48,7 +51,6 @@
             this.textBoxFilterId.Size = new System.Drawing.Size(100, 20);
             this.textBoxFilterId.TabIndex = 2;
             this.textBoxFilterId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFilterId_KeyPress);
-            this.textBoxFilterId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFilterId_KeyUp);
             // 
             // textBoxFilterName
             // 
@@ -56,7 +58,7 @@
             this.textBoxFilterName.Name = "textBoxFilterName";
             this.textBoxFilterName.Size = new System.Drawing.Size(100, 20);
             this.textBoxFilterName.TabIndex = 3;
-            this.textBoxFilterName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFilterName_KeyUp);
+            this.textBoxFilterName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFilterName_KeyPress);
             // 
             // label1
             // 
@@ -133,11 +135,29 @@
             this.richTextBoxControls.TabIndex = 7;
             this.richTextBoxControls.Text = "";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(515, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(35, 17);
+            this.toolStripStatusLabel.Text = "temp";
+            // 
             // MasterFileProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.richTextBoxControls);
             this.Controls.Add(this.listViewFilter);
             this.Controls.Add(this.listViewDisplay);
@@ -149,6 +169,8 @@
             this.Name = "MasterFileProject";
             this.Text = "Master File Project";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterFileProject_KeyDown);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,6 +188,8 @@
         private System.Windows.Forms.ColumnHeader filterId;
         private System.Windows.Forms.ColumnHeader filterName;
         private System.Windows.Forms.RichTextBox richTextBoxControls;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
     }
 }
 
