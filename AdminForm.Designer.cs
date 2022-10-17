@@ -128,11 +128,11 @@
             // toolStripStatusLabelAdmin
             // 
             this.toolStripStatusLabelAdmin.Name = "toolStripStatusLabelAdmin";
-            this.toolStripStatusLabelAdmin.Size = new System.Drawing.Size(35, 17);
-            this.toolStripStatusLabelAdmin.Text = "temp";
+            this.toolStripStatusLabelAdmin.Size = new System.Drawing.Size(0, 17);
             // 
             // richTextBoxAdmin
             // 
+            this.richTextBoxAdmin.Enabled = false;
             this.richTextBoxAdmin.Location = new System.Drawing.Point(253, 12);
             this.richTextBoxAdmin.Name = "richTextBoxAdmin";
             this.richTextBoxAdmin.Size = new System.Drawing.Size(100, 113);

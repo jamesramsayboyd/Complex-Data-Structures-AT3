@@ -26,7 +26,7 @@ namespace Complex_Data_Structures_AT3
         /// and a TValue of type string, name the new structure "MasterFile"
         /// </summary>
         static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
-        string FileName = "MalinStaffNamesV2.csv";
+        static public string FileName = "MalinStaffNamesV2.csv";
 
         #region LOAD AND DISPLAY
         /// <summary>
@@ -37,7 +37,6 @@ namespace Complex_Data_Structures_AT3
         {
             using (StreamReader sr = new StreamReader(@FileName))
             {
-                sr.ReadLine(); // skips first line of .csv ("mobile,name")
                 while (!sr.EndOfStream)
                 {
                     string[] staffMember = sr.ReadLine().Split(',');
@@ -224,6 +223,7 @@ namespace Complex_Data_Structures_AT3
         {
             richTextBoxControls.Text =
                 "Controls:\n" +
+                "Tab: Navigate\n" +
                 "Alt+A: Admin\n" +
                 "Alt+I: Clear ID\n" +
                 "Alt+N: Clear Name\n" +

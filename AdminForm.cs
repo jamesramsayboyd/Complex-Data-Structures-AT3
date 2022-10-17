@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,7 @@ namespace Complex_Data_Structures_AT3
         // Global variables to save staff details for Rollback option
         public static int StaffId = 0;
         public static string StaffName = "";
+        string FileName = "MalinStaffNamesV2.csv";
 
         #region CREATE
         /// <summary>
@@ -53,7 +55,6 @@ namespace Complex_Data_Structures_AT3
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             CreateNewStaffMember();
-            UserMessageAdmin(0);
         }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Complex_Data_Structures_AT3
             string name = textBoxName.Text.ToString();
             textBoxId.Text = id.ToString();
             MasterFileProject.MasterFile.Add(id, name);
+            UserMessageAdmin(0);
         }
 
         /// <summary>
@@ -97,7 +99,6 @@ namespace Complex_Data_Structures_AT3
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             UpdateStaffMember();
-            UserMessageAdmin(1);
         }
 
         // Updates staff member by id
@@ -107,6 +108,7 @@ namespace Complex_Data_Structures_AT3
             string name = textBoxName.Text;
             MasterFileProject.MasterFile.Remove(id);
             MasterFileProject.MasterFile.Add(id, name);
+            UserMessageAdmin(1);
         }
         #endregion UPDATE
 
@@ -116,12 +118,11 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            RemoveStaffMember();
-            UserMessageAdmin(2);
+            DeleteStaffMember();
         }
 
         // Deletes a staff member
-        private void RemoveStaffMember()
+        private void DeleteStaffMember()
         {
             int id = int.Parse(textBoxId.Text);
             DialogResult delChoice = MessageBox.Show("Do you wish to delete this staff member?",
@@ -131,12 +132,18 @@ namespace Complex_Data_Structures_AT3
                 MasterFileProject.MasterFile.Remove(id);
                 textBoxId.Clear();
                 textBoxName.Clear();
+                UserMessageAdmin(2);
             }
         }
         #endregion DELETE
 
         #region ROLLBACK
         private void buttonRollBack_Click(object sender, EventArgs e)
+        {
+            RollBackAction();
+        }
+
+        private void RollBackAction()
         {
             // Removing newly created/updated Staff Member (if applicable)
             try
@@ -164,7 +171,14 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void SaveChangesToCSV()
         {
-            // TODO: Save stuff
+            using (StreamWriter sw = new StreamWriter(@FileName))
+            {
+                foreach (var staff in MasterFileProject.MasterFile)
+                {
+                    sw.WriteLine(staff.Key + "," + staff.Value);
+                }
+                //sw.Close();
+            }
         }
         #endregion SAVE
 
@@ -197,9 +211,29 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void AdminForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.L && e.Modifiers == Keys.Alt)
+            if (e.Modifiers == Keys.Alt)
             {
-                Close();
+                switch (e.KeyCode)
+                {
+                    case Keys.C:
+                        CreateNewStaffMember();
+                        break;
+                    case Keys.U:
+                        UpdateStaffMember();
+                        break;
+                    case Keys.D:
+                        DeleteStaffMember();
+                        break;
+                    case Keys.R:
+                        RollBackAction();
+                        break;
+                    case Keys.L:
+                        SaveChangesToCSV();
+                        Close();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -209,6 +243,10 @@ namespace Complex_Data_Structures_AT3
                 "Controls:\n" +
                 "Tab: Navigate\n" +
                 "Enter: Confirm\n" +
+                "Alt+C: Create\n" +
+                "Alt+C: Update\n" +
+                "Alt+C: Delete\n" +
+                "Alt+C: Rollback\n" +
                 "Alt+L: Close Admin";
         }
         #endregion UTILITIES
