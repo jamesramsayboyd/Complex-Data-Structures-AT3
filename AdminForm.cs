@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Complex_Data_Structures_AT3
 {
@@ -44,7 +45,6 @@ namespace Complex_Data_Structures_AT3
         // Global variables to save staff details for Rollback option
         public static int StaffId = 0;
         public static string StaffName = "";
-        string FileName = "MalinStaffNamesV2.csv";
 
         #region CREATE
         /// <summary>
@@ -171,13 +171,18 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void SaveChangesToCSV()
         {
-            using (StreamWriter sw = new StreamWriter(@FileName))
+            using (StreamWriter sw = new StreamWriter(@MasterFileProject.FileName))
             {
+                var stopwatch = Stopwatch.StartNew();
                 foreach (var staff in MasterFileProject.MasterFile)
                 {
                     sw.WriteLine(staff.Key + "," + staff.Value);
                 }
-                //sw.Close();
+                stopwatch.Stop();
+                TimeSpan ts = stopwatch.Elapsed;
+                Trace.WriteLine("");
+                Trace.WriteLine("Data set saved to CSV: " + ts.Milliseconds.ToString() + " milliseconds");
+                Trace.WriteLine("Data set saved to CSV: " + ts.Ticks.ToString() + " ticks");
             }
         }
         #endregion SAVE

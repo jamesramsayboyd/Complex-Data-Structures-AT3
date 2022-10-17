@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,10 @@ namespace Complex_Data_Structures_AT3
         public MasterFileProject()
         {
             InitializeComponent();
+            Stream debugOutput = File.Create("TestingOutput.txt");
+            Trace.Listeners.Add(new TextWriterTraceListener(debugOutput));
+            Trace.AutoFlush = true;
+            Trace.WriteLine("*** Debug Output for MSSS Master File Project ***");
             LoadStaffDetails();
             DisplayFullData();
             TextBoxControls();
@@ -26,6 +31,7 @@ namespace Complex_Data_Structures_AT3
         /// and a TValue of type string, name the new structure "MasterFile"
         /// </summary>
         static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
+        //static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
         static public string FileName = "MalinStaffNamesV2.csv";
 
         #region LOAD AND DISPLAY
@@ -35,6 +41,7 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void LoadStaffDetails()
         {
+            var stopwatch = Stopwatch.StartNew();
             using (StreamReader sr = new StreamReader(@FileName))
             {
                 while (!sr.EndOfStream)
@@ -42,9 +49,14 @@ namespace Complex_Data_Structures_AT3
                     string[] staffMember = sr.ReadLine().Split(',');
                     int id = int.Parse(staffMember[0]);
                     string name = staffMember[1];
-                    MasterFile.Add(id, name);
+                    MasterFile.Add(id, name);                    
                 }
             }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+            Trace.WriteLine("");
+            Trace.WriteLine("New data set loaded to Dictionary: " + ts.Milliseconds.ToString() + " milliseconds");
+            Trace.WriteLine("New data set loaded to Dictionary: " + ts.Ticks.ToString() + " ticks");
         }
 
         /// <summary>
