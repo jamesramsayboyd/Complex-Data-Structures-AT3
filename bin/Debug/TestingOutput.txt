@@ -68,3 +68,63 @@ New data set loaded to Dictionary using File.ReadLines(): 2 milliseconds, 23908 
 Data set saved to CSV using StreamWriter: 3 milliseconds, 38191 ticks
 
 Data set saved to CSV using File.WriteAllText(): 3 milliseconds, 37872 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 37035 ticks
+
+Data set saved to CSV using File.WriteAllText(): 11 milliseconds, 112388 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 34271 ticks
+
+Data set saved to CSV using File.WriteAllText(): 13 milliseconds, 135267 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 9 milliseconds, 96796 ticks
+
+Data set saved to CSV using File.WriteAllText(): 45 milliseconds, 455104 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 36543 ticks
+
+Data set saved to CSV using File.WriteAllText(): 13 milliseconds, 139121 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 36621 ticks
+
+Data set saved to CSV using File.WriteAllText(): 22 milliseconds, 222503 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 37416 ticks
+
+Data set saved to CSV using StreamWriter: 9 milliseconds, 96974 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 36466 ticks
+
+Data set saved to CSV using StreamWriter: 10 milliseconds, 100323 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 37130 ticks
+
+Data set saved to CSV using File.WriteAllText(): 62 milliseconds, 624430 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 37141 ticks
+
+Data set saved to CSV using File.WriteAllText(): 25 milliseconds, 257366 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 42062 ticks
+
+Data set saved to CSV using StreamWriter: 23 milliseconds, 237127 ticks

@@ -22,7 +22,8 @@ namespace Complex_Data_Structures_AT3
             Trace.Listeners.Add(new TextWriterTraceListener(debugOutput));
             Trace.AutoFlush = true;
             Trace.WriteLine("");
-            Trace.WriteLine("*** Debug Output for MSSS Master File Project: New Test ***");
+            //Trace.WriteLine("*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***");
+            Trace.WriteLine("*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)");
             LoadStaffDetails();
             DisplayFullData();
             TextBoxControls();
@@ -32,8 +33,8 @@ namespace Complex_Data_Structures_AT3
         /// Q4.1 Create a Dictionary data structure with a TKey of type integer
         /// and a TValue of type string, name the new structure "MasterFile"
         /// </summary>
-        static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
-        //static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
+        //static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
+        static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
         static public string FileName = "MalinStaffNamesV2.csv";
 
         #region LOAD AND DISPLAY
@@ -43,8 +44,8 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void LoadStaffDetails()
         {
-            // Loading data from CSV to Dictionary using StreamReader
             // *** This method is slower ***
+            // Loading data from CSV to Dictionary using StreamReader
             //var stopwatch = Stopwatch.StartNew();
             //if (File.Exists(FileName))
             //{

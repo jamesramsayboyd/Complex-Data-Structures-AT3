@@ -146,36 +146,37 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void SaveChangesToCSV()
         {
-            // Using a StreamWriter object to write to the CSV file
             // *** This method is slower ***
-            //var stopwatch = Stopwatch.StartNew();
-            //using (StreamWriter sw = new StreamWriter(@MasterFileProject.FileName))
-            //{
-            //    foreach (var staff in MasterFileProject.MasterFile)
-            //    {
-            //        sw.WriteLine(staff.Key + "," + staff.Value);
-            //    }
-            //}
-            //stopwatch.Stop();
-            //TimeSpan ts = stopwatch.Elapsed;
-            //Trace.WriteLine("");
-            //Trace.WriteLine("Data set saved to CSV using StreamWriter: " + ts.Milliseconds.ToString() + " milliseconds, "
-            //    + ts.Ticks.ToString() + " ticks");
-
-            // Using a StringBuilder object to create a string from the Dictionary, 
-            // then File.WriteAllText() to the CSV file
+            //Using a StreamWriter object to write to the CSV file
             var stopwatch = Stopwatch.StartNew();
-            StringBuilder sb = new StringBuilder();
-            foreach (var item in MasterFileProject.MasterFile)
+            //using (StreamWriter sw = new StreamWriter(@MasterFileProject.FileName))
+            using (StreamWriter sw = new StreamWriter(@"SavedFile.csv"))
             {
-                sb.Append(item.Key + "," + item.Value + "\n");
+                foreach (var staff in MasterFileProject.MasterFile)
+                {
+                    sw.WriteLine(staff.Key + "," + staff.Value);
+                }
             }
-            File.WriteAllText(MasterFileProject.FileName, sb.ToString());
             stopwatch.Stop();
             TimeSpan ts = stopwatch.Elapsed;
             Trace.WriteLine("");
-            Trace.WriteLine("Data set saved to CSV using File.WriteAllText(): " + ts.Milliseconds.ToString() + " milliseconds, "
+            Trace.WriteLine("Data set saved to CSV using StreamWriter: " + ts.Milliseconds.ToString() + " milliseconds, "
                 + ts.Ticks.ToString() + " ticks");
+
+            // Using a StringBuilder object to create a string from the Dictionary, 
+            // then File.WriteAllText() to the CSV file
+            //var stopwatch = Stopwatch.StartNew();
+            //StringBuilder sb = new StringBuilder();
+            //foreach (var item in MasterFileProject.MasterFile)
+            //{
+            //    sb.Append(item.Key + "," + item.Value + "\n");
+            //}
+            //File.WriteAllText(@"SavedFile.csv", sb.ToString());
+            //stopwatch.Stop();
+            //TimeSpan ts = stopwatch.Elapsed;
+            //Trace.WriteLine("");
+            //Trace.WriteLine("Data set saved to CSV using File.WriteAllText(): " + ts.Milliseconds.ToString() + " milliseconds, "
+            //    + ts.Ticks.ToString() + " ticks");
         }
         #endregion SAVE
 
