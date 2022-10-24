@@ -17,10 +17,12 @@ namespace Complex_Data_Structures_AT3
         public MasterFileProject()
         {
             InitializeComponent();
-            Stream debugOutput = File.Create("TestingOutput.txt");
+            //Stream debugOutput = File.Create("TestingOutput.txt");
+            StreamWriter debugOutput = File.AppendText("TestingOutput.txt");
             Trace.Listeners.Add(new TextWriterTraceListener(debugOutput));
             Trace.AutoFlush = true;
-            Trace.WriteLine("*** Debug Output for MSSS Master File Project ***");
+            Trace.WriteLine("");
+            Trace.WriteLine("*** Debug Output for MSSS Master File Project: New Test ***");
             LoadStaffDetails();
             DisplayFullData();
             TextBoxControls();
@@ -41,22 +43,45 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void LoadStaffDetails()
         {
-            var stopwatch = Stopwatch.StartNew();
-            using (StreamReader sr = new StreamReader(@FileName))
+            // Loading data from CSV to Dictionary using StreamReader
+            // *** This method is slower ***
+            //var stopwatch = Stopwatch.StartNew();
+            //if (File.Exists(FileName))
+            //{
+            //    using (StreamReader sr = new StreamReader(@FileName))
+            //    {
+            //        while (!sr.EndOfStream)
+            //        {
+            //            string[] staffMember = sr.ReadLine().Split(',');
+            //            int id = int.Parse(staffMember[0]);
+            //            string name = staffMember[1];
+            //            MasterFile.Add(id, name);
+            //        }
+            //    }
+            //}
+            //stopwatch.Stop();
+            //TimeSpan ts = stopwatch.Elapsed;
+            //Trace.WriteLine("");
+            //Trace.WriteLine("New data set loaded to Dictionary using StreamReader: " +
+            //    ts.Milliseconds.ToString() + " milliseconds, " + ts.Ticks.ToString() + " ticks");
+            //MasterFile.Clear();
+
+            // Using File.ReadLines() to load data from CSV into Dictionary
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            if (File.Exists(@FileName))
             {
-                while (!sr.EndOfStream)
+                var lines = File.ReadLines(FileName);
+                foreach (var item in lines)
                 {
-                    string[] staffMember = sr.ReadLine().Split(',');
-                    int id = int.Parse(staffMember[0]);
-                    string name = staffMember[1];
-                    MasterFile.Add(id, name);                    
+                    string[] staffMember = item.Split(',');
+                    MasterFile.Add(int.Parse(staffMember[0]), staffMember[1]);
                 }
-            }
+            }        
             stopwatch.Stop();
             TimeSpan ts = stopwatch.Elapsed;
             Trace.WriteLine("");
-            Trace.WriteLine("New data set loaded to Dictionary: " + ts.Milliseconds.ToString() + " milliseconds");
-            Trace.WriteLine("New data set loaded to Dictionary: " + ts.Ticks.ToString() + " ticks");
+            Trace.WriteLine("New data set loaded to Dictionary using File.ReadLines(): " +
+                ts.Milliseconds.ToString() + " milliseconds, " + ts.Ticks.ToString() + " ticks");
         }
 
         /// <summary>
@@ -215,6 +240,10 @@ namespace Complex_Data_Structures_AT3
                             UserMessage(1);
                         }
                         break;
+                    case Keys.C:
+                        AdminForm adminCreate = new AdminForm(770000000);
+                        adminCreate.ShowDialog();
+                        break;
                     case Keys.I:
                         ClearTextBox(textBoxFilterId);
                         UserMessage(2);
@@ -241,6 +270,7 @@ namespace Complex_Data_Structures_AT3
                 "Controls:\n" +
                 "Tab: Navigate\n" +
                 "Alt+A: Admin\n" +
+                "Alt+C: Create New\n" +
                 "Alt+I: Clear ID\n" +
                 "Alt+N: Clear Name\n" +
                 "Ctrl+C: Close";

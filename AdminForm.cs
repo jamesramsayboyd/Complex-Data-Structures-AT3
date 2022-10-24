@@ -52,14 +52,6 @@ namespace Complex_Data_Structures_AT3
         /// from the related textbox. The new staff member must be added to the Dictionary
         /// data structure
         /// </summary>
-        private void buttonCreate_Click(object sender, EventArgs e)
-        {
-            CreateNewStaffMember();
-        }
-
-        /// <summary>
-        /// Adds the new staff member to the Dictionary
-        /// </summary>
         private void CreateNewStaffMember()
         {
             int id = GenerateUniqueIdNumber();
@@ -96,12 +88,6 @@ namespace Complex_Data_Structures_AT3
         /// <summary>
         /// Q5.4 Create a method that will update the name of the current staff ID
         /// </summary>
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            UpdateStaffMember();
-        }
-
-        // Updates staff member by id
         private void UpdateStaffMember()
         {
             int id = int.Parse(textBoxId.Text);
@@ -116,12 +102,6 @@ namespace Complex_Data_Structures_AT3
         /// <summary>
         /// Q5.5 Create a method that will remove the current staff id and clear the textboxes
         /// </summary>
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            DeleteStaffMember();
-        }
-
-        // Deletes a staff member
         private void DeleteStaffMember()
         {
             int id = int.Parse(textBoxId.Text);
@@ -138,11 +118,6 @@ namespace Complex_Data_Structures_AT3
         #endregion DELETE
 
         #region ROLLBACK
-        private void buttonRollBack_Click(object sender, EventArgs e)
-        {
-            RollBackAction();
-        }
-
         private void RollBackAction()
         {
             // Removing newly created/updated Staff Member (if applicable)
@@ -171,19 +146,36 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void SaveChangesToCSV()
         {
-            using (StreamWriter sw = new StreamWriter(@MasterFileProject.FileName))
+            // Using a StreamWriter object to write to the CSV file
+            // *** This method is slower ***
+            //var stopwatch = Stopwatch.StartNew();
+            //using (StreamWriter sw = new StreamWriter(@MasterFileProject.FileName))
+            //{
+            //    foreach (var staff in MasterFileProject.MasterFile)
+            //    {
+            //        sw.WriteLine(staff.Key + "," + staff.Value);
+            //    }
+            //}
+            //stopwatch.Stop();
+            //TimeSpan ts = stopwatch.Elapsed;
+            //Trace.WriteLine("");
+            //Trace.WriteLine("Data set saved to CSV using StreamWriter: " + ts.Milliseconds.ToString() + " milliseconds, "
+            //    + ts.Ticks.ToString() + " ticks");
+
+            // Using a StringBuilder object to create a string from the Dictionary, 
+            // then File.WriteAllText() to the CSV file
+            var stopwatch = Stopwatch.StartNew();
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in MasterFileProject.MasterFile)
             {
-                var stopwatch = Stopwatch.StartNew();
-                foreach (var staff in MasterFileProject.MasterFile)
-                {
-                    sw.WriteLine(staff.Key + "," + staff.Value);
-                }
-                stopwatch.Stop();
-                TimeSpan ts = stopwatch.Elapsed;
-                Trace.WriteLine("");
-                Trace.WriteLine("Data set saved to CSV: " + ts.Milliseconds.ToString() + " milliseconds");
-                Trace.WriteLine("Data set saved to CSV: " + ts.Ticks.ToString() + " ticks");
+                sb.Append(item.Key + "," + item.Value + "\n");
             }
+            File.WriteAllText(MasterFileProject.FileName, sb.ToString());
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+            Trace.WriteLine("");
+            Trace.WriteLine("Data set saved to CSV using File.WriteAllText(): " + ts.Milliseconds.ToString() + " milliseconds, "
+                + ts.Ticks.ToString() + " ticks");
         }
         #endregion SAVE
 
@@ -249,9 +241,9 @@ namespace Complex_Data_Structures_AT3
                 "Tab: Navigate\n" +
                 "Enter: Confirm\n" +
                 "Alt+C: Create\n" +
-                "Alt+C: Update\n" +
-                "Alt+C: Delete\n" +
-                "Alt+C: Rollback\n" +
+                "Alt+U: Update\n" +
+                "Alt+D: Delete\n" +
+                "Alt+R: Rollback\n" +
                 "Alt+L: Close Admin";
         }
         #endregion UTILITIES

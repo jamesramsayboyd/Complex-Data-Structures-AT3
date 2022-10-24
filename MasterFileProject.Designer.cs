@@ -108,9 +108,9 @@
             this.filterId,
             this.filterName});
             this.listViewFilter.HideSelection = false;
-            this.listViewFilter.Location = new System.Drawing.Point(272, 120);
+            this.listViewFilter.Location = new System.Drawing.Point(272, 134);
             this.listViewFilter.Name = "listViewFilter";
-            this.listViewFilter.Size = new System.Drawing.Size(218, 296);
+            this.listViewFilter.Size = new System.Drawing.Size(218, 282);
             this.listViewFilter.TabIndex = 4;
             this.listViewFilter.UseCompatibleStateImageBehavior = false;
             this.listViewFilter.View = System.Windows.Forms.View.Details;
@@ -131,7 +131,7 @@
             this.richTextBoxControls.Enabled = false;
             this.richTextBoxControls.Location = new System.Drawing.Point(378, 19);
             this.richTextBoxControls.Name = "richTextBoxControls";
-            this.richTextBoxControls.Size = new System.Drawing.Size(112, 86);
+            this.richTextBoxControls.Size = new System.Drawing.Size(112, 101);
             this.richTextBoxControls.TabIndex = 7;
             this.richTextBoxControls.Text = "";
             // 
