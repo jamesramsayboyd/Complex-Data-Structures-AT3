@@ -22,8 +22,8 @@ namespace Complex_Data_Structures_AT3
             Trace.Listeners.Add(new TextWriterTraceListener(debugOutput));
             Trace.AutoFlush = true;
             Trace.WriteLine("");
-            //Trace.WriteLine("*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***");
-            Trace.WriteLine("*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)");
+            Trace.WriteLine("*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***");
+            //Trace.WriteLine("*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)");
             LoadStaffDetails();
             DisplayFullData();
             TextBoxControls();
@@ -33,8 +33,8 @@ namespace Complex_Data_Structures_AT3
         /// Q4.1 Create a Dictionary data structure with a TKey of type integer
         /// and a TValue of type string, name the new structure "MasterFile"
         /// </summary>
-        //static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
-        static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
+        static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
+        //static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
         static public string FileName = "MalinStaffNamesV2.csv";
 
         #region LOAD AND DISPLAY
@@ -123,7 +123,6 @@ namespace Complex_Data_Structures_AT3
         {
             listViewFilter.Items.Clear();
             string target = textBox.Text.ToUpper();
-            var stopwatch = Stopwatch.StartNew();
             foreach (var staff in MasterFile)
             {
                 if (staff.Value.ToUpper().Contains(target))
@@ -131,9 +130,6 @@ namespace Complex_Data_Structures_AT3
                     DisplaySingleStaffMember(listViewFilter, staff);
                 }
             }
-            stopwatch.Stop();
-            TimeSpan ts = stopwatch.Elapsed;
-            Trace.WriteLine("Searching for " + target + ": " + ts.Milliseconds.ToString() + " milliseconds");
         }
 
         private void textBoxFilterName_KeyPress(object sender, KeyPressEventArgs e)
@@ -172,6 +168,7 @@ namespace Complex_Data_Structures_AT3
         {
             listViewFilter.Items.Clear();
             string target = textBox.Text.ToString();
+            var stopwatch = Stopwatch.StartNew();
             foreach (var staff in MasterFile)
             {
                 string Id = staff.Key.ToString();
@@ -180,6 +177,9 @@ namespace Complex_Data_Structures_AT3
                     DisplaySingleStaffMember(listViewFilter, staff);
                 }
             }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+            Trace.WriteLine("Searching for " + target + ": " + ts.Milliseconds.ToString() + " milliseconds");
         }
         #endregion FILTERING
 

@@ -128,3 +128,97 @@ Data set saved to CSV using File.WriteAllText(): 25 milliseconds, 257366 ticks
 New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 42062 ticks
 
 Data set saved to CSV using StreamWriter: 23 milliseconds, 237127 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 37420 ticks
+
+Data set saved to CSV using StreamWriter: 15 milliseconds, 151008 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 37069 ticks
+
+Data set saved to CSV using StreamWriter: 26 milliseconds, 264950 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 38825 ticks
+
+Data set saved to CSV using StreamWriter: 12 milliseconds, 120171 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 36603 ticks
+
+Data set saved to CSV using StreamWriter: 26 milliseconds, 263030 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 36973 ticks
+Searching for : 413 milliseconds
+Searching for 7: 399 milliseconds
+Searching for 70: 124 milliseconds
+Searching for 700: 21 milliseconds
+Searching for 7000: 9 milliseconds
+Searching for 70004: 7 milliseconds
+Searching for 700042: 9 milliseconds
+Searching for 7000421: 3 milliseconds
+Searching for 70004215: 6 milliseconds
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 2 milliseconds, 29033 ticks
+Searching for : 425 milliseconds
+Searching for 7: 404 milliseconds
+Searching for 70: 122 milliseconds
+Searching for 700: 21 milliseconds
+Searching for 7000: 3 milliseconds
+Searching for 70004: 1 milliseconds
+Searching for 700042: 4 milliseconds
+Searching for 7000421: 3 milliseconds
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 2 milliseconds, 26174 ticks
+Searching for : 391 milliseconds
+Searching for 7: 383 milliseconds
+Searching for 70: 130 milliseconds
+Searching for 700: 19 milliseconds
+Searching for 7000: 2 milliseconds
+Searching for 70004: 1 milliseconds
+Searching for 700042: 5 milliseconds
+Searching for 7000421: 3 milliseconds
+Searching for 70004215: 4 milliseconds
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 37138 ticks
+Searching for : 397 milliseconds
+Searching for 7: 411 milliseconds
+Searching for 70: 132 milliseconds
+Searching for 700: 17 milliseconds
+Searching for 7000: 2 milliseconds
+Searching for 70004: 1 milliseconds
+Searching for 700042: 1 milliseconds
+Searching for 7000421: 3 milliseconds
+Searching for 70004215: 2 milliseconds
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 37240 ticks
+Searching for : 401 milliseconds
+Searching for 4: 793 milliseconds
+Searching for 40: 123 milliseconds
+Searching for 404: 18 milliseconds
+Searching for 4046: 1 milliseconds
+Searching for 40463: 4 milliseconds
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 2 milliseconds, 26644 ticks
+Searching for : 422 milliseconds
+Searching for 4: 807 milliseconds
+Searching for 40: 120 milliseconds
+Searching for 404: 19 milliseconds
+Searching for 4046: 7 milliseconds

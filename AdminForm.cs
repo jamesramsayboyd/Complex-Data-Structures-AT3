@@ -163,6 +163,7 @@ namespace Complex_Data_Structures_AT3
             Trace.WriteLine("Data set saved to CSV using StreamWriter: " + ts.Milliseconds.ToString() + " milliseconds, "
                 + ts.Ticks.ToString() + " ticks");
 
+            // *** This method works faster with a Dictionary and slower with a SortedDictionary ***
             // Using a StringBuilder object to create a string from the Dictionary, 
             // then File.WriteAllText() to the CSV file
             //var stopwatch = Stopwatch.StartNew();
