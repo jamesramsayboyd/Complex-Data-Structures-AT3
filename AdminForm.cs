@@ -54,11 +54,16 @@ namespace Complex_Data_Structures_AT3
         /// </summary>
         private void CreateNewStaffMember()
         {
-            int id = GenerateUniqueIdNumber();
-            string name = textBoxName.Text.ToString();
-            textBoxId.Text = id.ToString();
-            MasterFileProject.MasterFile.Add(id, name);
-            UserMessageAdmin(0);
+            if (!string.IsNullOrEmpty(textBoxName.Text))
+            {
+                int id = GenerateUniqueIdNumber();
+                string name = textBoxName.Text.ToString();
+                textBoxId.Text = id.ToString();
+                MasterFileProject.MasterFile.Add(id, name);
+                UserMessageAdmin(0);
+            }
+            else
+                UserMessageAdmin(4);
         }
 
         /// <summary>
@@ -197,6 +202,9 @@ namespace Complex_Data_Structures_AT3
                     break;
                 case 3:
                     toolStripStatusLabelAdmin.Text = "Action undone";
+                    break;
+                case 4:
+                    toolStripStatusLabelAdmin.Text = "Enter a name to add a new staff member";
                     break;
                 default:
                     break;

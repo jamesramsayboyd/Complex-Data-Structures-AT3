@@ -222,3 +222,26 @@ Searching for 4: 807 milliseconds
 Searching for 40: 120 milliseconds
 Searching for 404: 19 milliseconds
 Searching for 4046: 7 milliseconds
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 41024 ticks
+Searching for : 227 milliseconds
+
+Data set saved to CSV using StreamWriter: 1 milliseconds, 18346 ticks
+
+Data set saved to CSV using StreamWriter: 1 milliseconds, 16975 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 43289 ticks
+
+Data set saved to CSV using StreamWriter: 5 milliseconds, 52836 ticks
+
+Data set saved to CSV using StreamWriter: 5 milliseconds, 50319 ticks
+
+Data set saved to CSV using StreamWriter: 2 milliseconds, 25316 ticks
+
+Data set saved to CSV using StreamWriter: 2 milliseconds, 23085 ticks
+
+Data set saved to CSV using StreamWriter: 1 milliseconds, 17347 ticks
