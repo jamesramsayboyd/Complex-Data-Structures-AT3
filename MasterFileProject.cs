@@ -33,9 +33,11 @@ namespace Complex_Data_Structures_AT3
         /// Q4.1 Create a Dictionary data structure with a TKey of type integer
         /// and a TValue of type string, name the new structure "MasterFile"
         /// </summary>
-        static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
-        //static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
+        //static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
+        static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
         static public string FileName = "MalinStaffNamesV2.csv";
+        //static public string FileName = "TestCSV.csv";
+        //static public string FileName = "TestCSV2.csv";
 
         #region LOAD AND DISPLAY
         /// <summary>
@@ -46,29 +48,29 @@ namespace Complex_Data_Structures_AT3
         {
             // *** This method is slower ***
             // Loading data from CSV to Dictionary using StreamReader
-            //var stopwatch = Stopwatch.StartNew();
-            //if (File.Exists(FileName))
-            //{
-            //    using (StreamReader sr = new StreamReader(@FileName))
-            //    {
-            //        while (!sr.EndOfStream)
-            //        {
-            //            string[] staffMember = sr.ReadLine().Split(',');
-            //            int id = int.Parse(staffMember[0]);
-            //            string name = staffMember[1];
-            //            MasterFile.Add(id, name);
-            //        }
-            //    }
-            //}
-            //stopwatch.Stop();
-            //TimeSpan ts = stopwatch.Elapsed;
-            //Trace.WriteLine("");
-            //Trace.WriteLine("New data set loaded to Dictionary using StreamReader: " +
-            //    ts.Milliseconds.ToString() + " milliseconds, " + ts.Ticks.ToString() + " ticks");
-            //MasterFile.Clear();
+            var stopwatch = Stopwatch.StartNew();
+            if (File.Exists(FileName))
+            {
+                using (StreamReader sr = new StreamReader(@FileName))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string[] staffMember = sr.ReadLine().Split(',');
+                        int id = int.Parse(staffMember[0]);
+                        string name = staffMember[1];
+                        MasterFile.Add(id, name);
+                    }
+                }
+            }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+            Trace.WriteLine("");
+            Trace.WriteLine("New data set loaded to Dictionary using StreamReader: " +
+                ts.Milliseconds.ToString() + "ms, " + ts.Ticks.ToString() + " ticks");
+            MasterFile.Clear();
 
-            // Using File.ReadLines() to load data from CSV into Dictionary
-            Stopwatch stopwatch = Stopwatch.StartNew();
+            //Using File.ReadLines() to load data from CSV into Dictionary
+            Stopwatch st = Stopwatch.StartNew();
             if (File.Exists(@FileName))
             {
                 var lines = File.ReadLines(FileName);
@@ -77,12 +79,12 @@ namespace Complex_Data_Structures_AT3
                     string[] staffMember = item.Split(',');
                     MasterFile.Add(int.Parse(staffMember[0]), staffMember[1]);
                 }
-            }        
+            }
             stopwatch.Stop();
-            TimeSpan ts = stopwatch.Elapsed;
+            TimeSpan tis = st.Elapsed;
             Trace.WriteLine("");
-            Trace.WriteLine("New data set loaded to Dictionary using File.ReadLines(): " +
-                ts.Milliseconds.ToString() + " milliseconds, " + ts.Ticks.ToString() + " ticks");
+            Trace.WriteLine("New data set loaded to SortedDictionary using File.ReadLines(): " +
+                tis.Milliseconds.ToString() + "ms, " + tis.Ticks.ToString() + " ticks");
         }
 
         /// <summary>
@@ -179,7 +181,7 @@ namespace Complex_Data_Structures_AT3
             }
             stopwatch.Stop();
             TimeSpan ts = stopwatch.Elapsed;
-            Trace.WriteLine("Searching for " + target + ": " + ts.Milliseconds.ToString() + " milliseconds");
+            Trace.WriteLine("Search target " + target + ": " + ts.Milliseconds.ToString());
         }
         #endregion FILTERING
 

@@ -245,3 +245,412 @@ Data set saved to CSV using StreamWriter: 2 milliseconds, 25316 ticks
 Data set saved to CSV using StreamWriter: 2 milliseconds, 23085 ticks
 
 Data set saved to CSV using StreamWriter: 1 milliseconds, 17347 ticks
+*** Debug Output for MSSS Master File Project: New Test Dictionary
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 32305 ticks
+
+*** Debug Output for MSSS Master File Project: New Test Dictionary
+
+New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 40639 ticks
+
+*** Debug Output for MSSS Master File Project: New Test Dictionary
+
+New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 44448 ticks
+
+*** Debug Output for MSSS Master File Project: New Test Dictionary
+
+New data set loaded to Dictionary using File.ReadLines(): 3 milliseconds, 35218 ticks
+
+*** Debug Output for MSSS Master File Project: New Test Dictionary
+
+New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 42480 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 6 milliseconds, 68763 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 49118 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 4 milliseconds, 48842 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 5 milliseconds, 50306 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 5 milliseconds, 53361 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 7 milliseconds, 71398 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 7924 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 7883 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 7765 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 7580 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 1 milliseconds, 10587 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 9582 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 5745 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 7228 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 6894 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 0 milliseconds, 8125 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 41 milliseconds, 419214 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 5 milliseconds, 57594 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 5 milliseconds, 51326 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 5 milliseconds, 53931 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 5 milliseconds, 59529 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 9 milliseconds, 94057 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 9 milliseconds, 92857 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 38 milliseconds, 385707 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 8 milliseconds, 85041 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 14 milliseconds, 147678 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 7 milliseconds, 72550 ticks
+Searching for : 503 milliseconds
+Searching for 7: 477 milliseconds
+Searching for 75: 441 milliseconds
+Searching for 759: 52 milliseconds
+Searching for 7594: 8 milliseconds
+Searching for : 522 milliseconds
+Searching for 7: 488 milliseconds
+Searching for 76: 445 milliseconds
+Searching for 766: 49 milliseconds
+Searching for 7661: 6 milliseconds
+Searching for 76618: 2 milliseconds
+
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 63 milliseconds, 632894 ticks
+Search: 634 milliseconds
+Search: 525 milliseconds
+Search: 903 milliseconds
+Search: 347 milliseconds
+Search: 44 milliseconds
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 32 milliseconds, 327555 ticks
+Search: 660 milliseconds
+Search: 291 milliseconds
+Search: 861 milliseconds
+Search: 335 milliseconds
+Search: 46 milliseconds
+
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using File.ReadLines(): 36 milliseconds, 363511 ticks
+Search: 2733 ticks
+Search: 890 ticks
+Search: 1345 ticks
+Search: 864 ticks
+Search: 861 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 26 milliseconds, 265216 ticks
+Search: 2574 ticks
+Search: 83 ticks
+Search: 1604 ticks
+Search: 884 ticks
+Search: 1756 ticks
+Search: 910 ticks
+
+million line csv:
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 764 milliseconds, 7643959 ticks
+Search: 0.0002597 seconds, 2597 ticks
+Search: 9E-05 seconds, 900 ticks
+Search: 8.23E-05 seconds, 823 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 0.7522152 seconds, 7522152 ticks
+Search: 2639 ticks
+Search: 844 ticks
+Search: 1201 ticks
+Search: 861 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using File.ReadLines(): 7.6E-05 seconds, 760 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using StreamReader: 10 milliseconds, 106173 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 0.0032588 seconds, 32588 ticks
+
+Data set saved to CSV using StreamWriter: 6 milliseconds, 66588 ticks
+
+Data set saved to CSV using File.WriteAllText(): 4 milliseconds, 40918 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using StreamReader: 8ms, 85150 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 4ms, 41121 ticks
+
+Data set saved to CSV using StreamWriter: 6 milliseconds, 65229 ticks
+
+Data set saved to CSV using File.WriteAllText(): 3 milliseconds, 39892 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using StreamReader: 4ms, 47761 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 2ms, 27841 ticks
+
+Data set saved to CSV using StreamWriter: 6 milliseconds, 67725 ticks
+
+Data set saved to CSV using File.WriteAllText(): 4 milliseconds, 46068 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using StreamReader: 7ms, 71992 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 3ms, 30304 ticks
+
+Data set saved to CSV using StreamWriter: 6 milliseconds, 65793 ticks
+
+Data set saved to CSV using File.WriteAllText(): 2 milliseconds, 20556 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using StreamReader: 5ms, 50447 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 2ms, 28982 ticks
+
+Data set saved to CSV using StreamWriter: 6 milliseconds, 64854 ticks
+
+Data set saved to CSV using File.WriteAllText(): 4 milliseconds, 44670 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using StreamReader: 5ms, 50461 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 2ms, 28722 ticks
+
+Data set saved to CSV using StreamWriter: 6 milliseconds, 62967 ticks
+
+Data set saved to CSV using File.WriteAllText(): 4 milliseconds, 41699 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 5ms, 51399 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 2ms, 20392 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (SortedDictionary)
+
+New data set loaded to Dictionary using StreamReader: 7ms, 73811 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 3ms, 38829 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 5ms, 50958 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 3ms, 34223 ticks
+Search: 234 milliseconds
+Search: 290 milliseconds
+Search: 174 milliseconds
+Search: 20 milliseconds
+Search: 3 milliseconds
+Search: 1 milliseconds
+Search: 1 milliseconds
+Search: 1 milliseconds
+Search: 1 milliseconds
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 5ms, 54876 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 2ms, 26987 ticks
+Search target 7: 243
+Search target 70: 110
+Search target 700: 14
+Search target 7000: 2
+Search target 70004: 1
+Search target 700042: 1
+Search target 7000421: 1
+Search target 70004215: 1
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 5ms, 51812 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 2ms, 20474 ticks
+Search target 7: 229
+Search target 75: 203
+Search target 756: 24
+Search target 7568: 2
+Search target 75680: 1
+Search target 756807: 1
+Search target 7568077: 0
+Search target 75680777: 0
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 4ms, 43474 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 1ms, 19071 ticks
+Search target 7: 228
+Search target 74: 274
+Search target 746: 10
+Search target 7461: 1
+Search target 74619: 1
+Search target 746196: 1
+Search target 7461968: 1
+Search target 74619681: 3
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 4ms, 44293 ticks
+
+New data set loaded to Dictionary using File.ReadLines(): 1ms, 18375 ticks
+Search target : 239
+Search target 7: 245
+Search target 70: 115
+Search target 700: 13
+Search target 7000: 1
+Search target 70004: 1
+Search target 700042: 1
+Search target 7000421: 1
+Search target 70004215: 1
+Search target : 251
+Search target 7: 250
+Search target 70: 115
+Search target 700: 14
+Search target 7000: 1
+Search target 70004: 1
+Search target 700042: 1
+Search target 7000421: 1
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 5ms, 50569 ticks
+
+New data set loaded to SortedDictionary using File.ReadLines(): 2ms, 29466 ticks
+Search target : 252
+Search target 7: 246
+Search target 70: 116
+Search target 700: 14
+Search target 7000: 2
+Search target 70004: 1
+Search target 700042: 1
+Search target 7000421: 1
+Search target : 243
+Search target 7: 249
+Search target 75: 207
+Search target 756: 24
+Search target 7568: 3
+Search target 75680: 1
+Search target 756807: 1
+Search target 7568077: 1
+Search target : 245
+Search target 7: 246
+Search target 74: 284
+Search target 746: 11
+Search target 7461: 1
+Search target 74619: 1
+Search target 746196: 1
+Search target 7461968: 1
+Search target 74619681: 1
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 5ms, 50920 ticks
+
+New data set loaded to SortedDictionary using File.ReadLines(): 2ms, 29520 ticks
+Search target : 244
+Search target 7: 230
+Search target 70: 119
+Search target 700: 14
+Search target 7000: 2
+Search target 70004: 1
+Search target 700042: 1
+Search target 7000421: 1
+Search target : 234
+Search target 7: 240
+Search target 74: 274
+Search target 746: 11
+Search target 7461: 2
+Search target 74619: 1
+Search target 746196: 1
+Search target 7461968: 1
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 6ms, 61026 ticks
+
+New data set loaded to SortedDictionary using File.ReadLines(): 2ms, 28469 ticks

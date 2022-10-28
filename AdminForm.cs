@@ -168,21 +168,21 @@ namespace Complex_Data_Structures_AT3
             Trace.WriteLine("Data set saved to CSV using StreamWriter: " + ts.Milliseconds.ToString() + " milliseconds, "
                 + ts.Ticks.ToString() + " ticks");
 
-            // *** This method works faster with a Dictionary and slower with a SortedDictionary ***
+            // *** Faster method ***
             // Using a StringBuilder object to create a string from the Dictionary, 
             // then File.WriteAllText() to the CSV file
-            //var stopwatch = Stopwatch.StartNew();
-            //StringBuilder sb = new StringBuilder();
-            //foreach (var item in MasterFileProject.MasterFile)
-            //{
-            //    sb.Append(item.Key + "," + item.Value + "\n");
-            //}
-            //File.WriteAllText(@"SavedFile.csv", sb.ToString());
-            //stopwatch.Stop();
-            //TimeSpan ts = stopwatch.Elapsed;
-            //Trace.WriteLine("");
-            //Trace.WriteLine("Data set saved to CSV using File.WriteAllText(): " + ts.Milliseconds.ToString() + " milliseconds, "
-            //    + ts.Ticks.ToString() + " ticks");
+            var st = Stopwatch.StartNew();
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in MasterFileProject.MasterFile)
+            {
+                sb.Append(item.Key + "," + item.Value + "\n");
+            }
+            File.WriteAllText(@"SavedFile.csv", sb.ToString());
+            stopwatch.Stop();
+            TimeSpan tis = st.Elapsed;
+            Trace.WriteLine("");
+            Trace.WriteLine("Data set saved to CSV using File.WriteAllText(): " + tis.Milliseconds.ToString() + " milliseconds, "
+                + tis.Ticks.ToString() + " ticks");
         }
         #endregion SAVE
 
