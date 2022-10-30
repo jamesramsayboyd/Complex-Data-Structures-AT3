@@ -1,0 +1,12 @@
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 6ms, 68370 ticks
+
+New data set loaded to SortedDictionary using File.ReadLines(): 1ms, 17373 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 2ms, 27920 ticks
+
+New data set loaded to SortedDictionary using File.ReadLines(): 1ms, 17147 ticks

@@ -33,8 +33,8 @@ namespace Complex_Data_Structures_AT3
         /// Q4.1 Create a Dictionary data structure with a TKey of type integer
         /// and a TValue of type string, name the new structure "MasterFile"
         /// </summary>
-        //static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
-        static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
+        static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
+        //static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
         static public string FileName = "MalinStaffNamesV2.csv";
         //static public string FileName = "TestCSV.csv";
         //static public string FileName = "TestCSV2.csv";

@@ -148,8 +148,8 @@
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(35, 17);
-            this.toolStripStatusLabel.Text = "temp";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(12, 17);
+            this.toolStripStatusLabel.Text = "-";
             // 
             // MasterFileProject
             // 
