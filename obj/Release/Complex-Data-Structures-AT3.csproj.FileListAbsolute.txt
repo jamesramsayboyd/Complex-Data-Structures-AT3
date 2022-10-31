@@ -10,3 +10,15 @@ C:\Users\James\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-
 C:\Users\James\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.csproj.CoreCompileInputs.cache
 C:\Users\James\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.exe
 C:\Users\James\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.pdb
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\bin\Release\Complex-Data-Structures-AT3.exe.config
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\bin\Release\Complex-Data-Structures-AT3.exe
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\bin\Release\Complex-Data-Structures-AT3.pdb
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.csproj.AssemblyReference.cache
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.csproj.SuggestedBindingRedirects.cache
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex_Data_Structures_AT3.AdminForm.resources
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex_Data_Structures_AT3.MasterFileProject.resources
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex_Data_Structures_AT3.Properties.Resources.resources
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.csproj.GenerateResource.cache
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.csproj.CoreCompileInputs.cache
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.exe
+C:\Users\30041547\Documents\GitHub\Complex-Data-Structures-AT3\obj\Release\Complex-Data-Structures-AT3.pdb

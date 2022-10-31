@@ -10,3 +10,44 @@ New data set loaded to SortedDictionary using File.ReadLines(): 1ms, 17373 ticks
 New data set loaded to Dictionary using StreamReader: 2ms, 27920 ticks
 
 New data set loaded to SortedDictionary using File.ReadLines(): 1ms, 17147 ticks
+
+*** Debug Output for MSSS Master File Project: New Test (Dictionary) ***
+
+New data set loaded to Dictionary using StreamReader: 4ms, 40005 ticks
+
+New data set loaded to SortedDictionary using File.ReadLines(): 2ms, 29990 ticks
+Search target : 366
+Search target 7: 343
+Search target 75: 222
+Search target 756: 29
+Search target 7568: 3
+Search target 75680: 6
+Search target 756807: 5
+Search target 7568077: 3
+Search target 75680777: 4
+
+Data set saved to CSV using StreamWriter: 1 milliseconds, 18245 ticks
+
+Data set saved to CSV using File.WriteAllText(): 5 milliseconds, 56536 ticks
+Search target : 342
+Search target 7: 332
+Search target 75: 216
+Search target 756: 25
+Search target 7568: 7
+Search target 75680: 1
+Search target 756807: 1
+Search target 7568077: 1
+Search target 75680777: 1
+
+Data set saved to CSV using StreamWriter: 5 milliseconds, 57151 ticks
+
+Data set saved to CSV using File.WriteAllText(): 4 milliseconds, 48989 ticks
+Search target : 332
+Search target 7: 336
+Search target 75: 223
+Search target 756: 26
+Search target 7568: 3
+Search target 75680: 1
+Search target 756807: 1
+Search target 7568077: 1
+Search target 75680777: 1

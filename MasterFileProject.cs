@@ -10,6 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * James Boyd 30041547
+ * Complex Data Structures AT3
+ * A keyboard-based program storing staff data for Malin Space Science Systems
+ * Data is stored as Key/Value pairs in a Dictionary<int, string>
+ * Program has a second form that is loaded for CRUD operations
+ */
+
 namespace Complex_Data_Structures_AT3
 {
     public partial class MasterFileProject : Form
@@ -36,8 +44,6 @@ namespace Complex_Data_Structures_AT3
         static public Dictionary<int, string> MasterFile = new Dictionary<int, string>();
         //static public SortedDictionary<int, string> MasterFile = new SortedDictionary<int, string>();
         static public string FileName = "MalinStaffNamesV2.csv";
-        //static public string FileName = "TestCSV.csv";
-        //static public string FileName = "TestCSV2.csv";
 
         #region LOAD AND DISPLAY
         /// <summary>
@@ -48,26 +54,26 @@ namespace Complex_Data_Structures_AT3
         {
             // *** This method is slower ***
             // Loading data from CSV to Dictionary using StreamReader
-            var stopwatch = Stopwatch.StartNew();
-            if (File.Exists(FileName))
-            {
-                using (StreamReader sr = new StreamReader(@FileName))
-                {
-                    while (!sr.EndOfStream)
-                    {
-                        string[] staffMember = sr.ReadLine().Split(',');
-                        int id = int.Parse(staffMember[0]);
-                        string name = staffMember[1];
-                        MasterFile.Add(id, name);
-                    }
-                }
-            }
-            stopwatch.Stop();
-            TimeSpan ts = stopwatch.Elapsed;
-            Trace.WriteLine("");
-            Trace.WriteLine("New data set loaded to Dictionary using StreamReader: " +
-                ts.Milliseconds.ToString() + "ms, " + ts.Ticks.ToString() + " ticks");
-            MasterFile.Clear();
+            //var stopwatch = Stopwatch.StartNew();
+            //if (File.Exists(FileName))
+            //{ 
+            //    using (StreamReader sr = new StreamReader(@FileName))
+            //    {
+            //        while (!sr.EndOfStream)
+            //        {
+            //            string[] staffMember = sr.ReadLine().Split(',');
+            //            int id = int.Parse(staffMember[0]);
+            //            string name = staffMember[1];
+            //            MasterFile.Add(id, name);
+            //        }
+            //    }
+            //}
+            //stopwatch.Stop();
+            //TimeSpan ts = stopwatch.Elapsed;
+            //Trace.WriteLine("");
+            //Trace.WriteLine("New data set loaded to Dictionary using StreamReader: " +
+            //    ts.Milliseconds.ToString() + "ms, " + ts.Ticks.ToString() + " ticks");
+            //MasterFile.Clear();
 
             //Using File.ReadLines() to load data from CSV into Dictionary
             Stopwatch st = Stopwatch.StartNew();
@@ -80,7 +86,7 @@ namespace Complex_Data_Structures_AT3
                     MasterFile.Add(int.Parse(staffMember[0]), staffMember[1]);
                 }
             }
-            stopwatch.Stop();
+            st.Stop();
             TimeSpan tis = st.Elapsed;
             Trace.WriteLine("");
             Trace.WriteLine("New data set loaded to SortedDictionary using File.ReadLines(): " +
